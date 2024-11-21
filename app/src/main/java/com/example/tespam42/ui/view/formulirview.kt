@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -29,7 +30,7 @@ fun FormulirView(modifier: Modifier = Modifier, listJK : List<String>,
     var notelepon by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("") }
 
-    val listData : MutableList<String> = mutableListOf(nama,gender,email,alamat,notelepon)
+    val listData: MutableList<String> = mutableListOf(nama, gender, email, alamat, notelepon)
 
     Column(
         modifier.fillMaxSize().padding(30.dp),
@@ -98,4 +99,10 @@ fun FormulirView(modifier: Modifier = Modifier, listJK : List<String>,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
         )
         Spacer(modifier = Modifier.padding(8.dp))
+        Button(onClick = {
+            onSubmitClickened(listData)
+        }) {
+            Text(text = "Simpan")
+        }
     }
+}
