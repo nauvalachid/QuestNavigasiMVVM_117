@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TesPam42Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    NavigationControl(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
